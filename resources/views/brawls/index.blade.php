@@ -75,7 +75,7 @@
                                     </div>
                                     <div class="col-md-6">
                                         <h6 class="card-title"><i>Poder de estrela:</i></h6>
-                                                                                <hr class="desc">
+                                        <hr class="desc">
                                         @foreach ($brawl['starPowers'] as $starPowers)
                                             <li class="card-subtitle">{{ $starPowers['name'] }}</li>
                                         @endforeach
@@ -84,13 +84,6 @@
                                         <hr class="desc">
                                         {{ $brawl['description'] ?? '' }}
                                     </p>
-                                    <center>
-                                        <a href="#">
-                                            <button class="btn btn-outline-success w-50 rounded-pill shadow">
-                                                Detalhes
-                                            </button>
-                                        </a>
-                                    </center>
                                 </div>
                             </div>
                         </div>

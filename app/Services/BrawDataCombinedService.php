@@ -23,6 +23,7 @@ class BrawDataCombinedService implements BrawlDataCombinedInterface
         }
         return $this->brawlsMerge;
     }
+
     public function getDataCombined(): array
     {
         return $this->brawlsMerge;

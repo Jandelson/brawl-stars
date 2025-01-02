@@ -24,7 +24,7 @@ class BrawlsService
             $brawlApiOfficial,
             $brawlApiUnofficial
         );
-        
+
         $this->createdFileJson($this->brawDataCombinedService);
 
         return (object) $this->getFileJson();
