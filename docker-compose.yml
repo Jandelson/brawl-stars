@@ -2,10 +2,7 @@ version: "3.8"
 
 services:
   app:
-    build:
-      context: ./
-      dockerfile: Dockerfile
-    image: php81fpm
+    image: php:8.3-fpm
     container_name: brawlworld
     restart: unless-stopped
     working_dir: /var/www/

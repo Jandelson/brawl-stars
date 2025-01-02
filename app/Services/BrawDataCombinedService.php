@@ -10,18 +10,18 @@ class BrawDataCombinedService implements BrawlDataCombinedInterface
     public function setDataCombined(array $data1, array $data2): array
     {
         $this->brawlsMerge = [];
-        if (!empty($brawlApiOfficial) and !empty($brawlApiUnofficial)) {
-            foreach($brawlApiOfficial as $object) {
-                foreach($brawlApiUnofficial as $object1) {
-                    if ($object->id == $object1->id) {
-                        $this->brawlsMerge[$object->id] = array_merge(
-                            (array) $object1, (array) $object
+        if (!empty($data1) and !empty($data2)) {
+            foreach($data1 as $objectData1) {
+                foreach($data2 as $objectData2) {
+                    if ($objectData1->id == $objectData2->id) {
+                        $this->brawlsMerge[$objectData1->id] = array_merge(
+                            (array) $objectData2, (array) $objectData1
                         );
                     }
                 }
             }
         }
-        return $this->brawlsMerge;   
+        return $this->brawlsMerge;
     }
     public function getDataCombined(): array
     {
