@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use App\Contracts\BrawlDataCombinedInterface;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 
 class BrawlsService
@@ -17,6 +18,12 @@ class BrawlsService
 
     public function getData($method = 'brawlers') : object
     {
+        if (Storage::exists($this->fileName)) {
+            return (object) $this->getFileJson();
+        }
+
+        DB::statement('truncate table descriptions');
+
         $brawlApiOfficial = $this->brawlApiOfficial->getData($method);
         $brawlApiUnofficial = $this->brawlApiUnofficial->getData($method);
 

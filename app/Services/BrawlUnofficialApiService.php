@@ -15,7 +15,7 @@ class BrawlUnofficialApiService implements BrawlApiInterface
     {
         $array = [];
         $this->method = $method;
-        
+
         try {
             $url = 'https://api.brawlapi.com/v1/' . $this->method;
             $headers = [];

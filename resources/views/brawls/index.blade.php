@@ -13,8 +13,17 @@
                 </div>
             </div>
             <div class="col-md-3 text-center mb-2 d-flex">
-
                 <div class="card">
+
+                    <!-- <div class="card-body">
+                        <select class="form-select" aria-label="Default select example">
+                            <option value="pt-br" selected>PT-BR</option>
+                            <option value="en">EN</option>
+                            <option value="fr">FR</option>
+                        </select>
+                    </div>
+                    -->
+
                     <div class="card-body">
                         <center>
                             <small>Seleção Rápida</small>
@@ -82,7 +91,7 @@
                                     </div>
                                     <p class="card-body">
                                         <hr class="desc">
-                                        {{ $brawl['description'] ?? '' }}
+                                        {{ $descriptions[$brawl['id']] ?? $brawl['description'] ?? '' }}
                                     </p>
                                 </div>
                             </div>

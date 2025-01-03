@@ -33,6 +33,7 @@
                     {{ config('app.name', 'Laravel') }}
                     <img src="{{ asset('imagem/logo.png') }}" width="150px">
                 </a>
+                <img src="{{ asset('imagem/google-gemini.png') }}" title="Esse site usa IA google Gemini para traduzir os textos de descrição dos personagens" width="150px">
             </div>
         </nav>
 

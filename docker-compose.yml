@@ -2,7 +2,9 @@ version: "3.8"
 
 services:
   app:
-    image: php:8.3-fpm
+    build:
+        context: .
+        dockerfile: Dockerfile
     container_name: brawlworld
     restart: unless-stopped
     working_dir: /var/www/
@@ -23,7 +25,24 @@ services:
     networks:
       - brawl
 
+  db:
+    image: mysql:latest
+    container_name: brawl-mysql
+    restart: unless-stopped
+    ports:
+      - "3309:3306"
+    networks:
+      - brawl
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: brawl
+    volumes:
+      - mysql_data:/var/lib/mysql
+
 networks:
   brawl:
     driver: bridge
     name: brawl
+
+volumes:
+  mysql_data:
